@@ -1,0 +1,31 @@
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin: 0;
+}
+
+.image {
+    align-self: center;
+    margin: 5vw;
+    width: 60vw;
+    height: 60vw;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .content {
+       margin: auto;
+       max-width: 700px;
+    }
+
+    .image {
+        align-self: center;
+        margin: 50px;
+        width: 250px;
+        height: 250px;
+    }
+}
