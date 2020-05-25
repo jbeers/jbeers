@@ -8,7 +8,7 @@ export default ( { title, data } ) => {
     const { markdownRemark: post } = data
     return <Layout>
         <div className = { style.content }>
-          <h1 className={style.title}>{post.frontmatter.title}</h1>
+          <h1 className={style.title}>{post.frontmatter.title}<span className = { style.date }>{post.frontmatter.date}</span></h1>
           <img className = { style.image } src={post.frontmatter.image} alt={post.frontmatter.imageAlt || post.frontmatter.title}></img>
           <div
             className="blog-post-content"

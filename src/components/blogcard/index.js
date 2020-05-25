@@ -16,7 +16,6 @@ export default ( {
                     <Link to={pagePath}>{title}</Link>
                 </h2>
                 <span>{date}</span>
-                <span>5min read</span>
             </div>
             <div className = { style.image_wrapper }>
                 <img src={imageSrc} alt={title} />
