@@ -2,7 +2,7 @@
 pagePath: "/site-launch"
 date: "2020-05-25"
 title: "Site Launch"
-image: "images/fly.png"
+image: ../src/images/fly.png
 ---
 
 I think the last time I launched a personal website was nearly 10 years ago. I was in college and was hoping to begin a small freelance graphic design business on the side. I didn't end up doing any freelance graphic design but I did complete the website. It was the first full website I ever made and built it using Dreamweaver. I didn't end up keeping it up for very long but it felt like an accomplishment.

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Image from 'gatsby-image';
 import style from './blogcard.module.css';
 
 export default ( {
@@ -18,7 +19,7 @@ export default ( {
                 <span>{date}</span>
             </div>
             <div className = { style.image_wrapper }>
-                <img src={imageSrc} alt={title} />
+                <Image fluid={imageSrc.childImageSharp.fluid} alt = { title } />
             </div>
         </div>
         <div className = { style.bottom }>

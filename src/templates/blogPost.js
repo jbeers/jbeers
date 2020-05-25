@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from "gatsby";
 import Layout from '../layouts/pageLayout';
+import Image from 'gatsby-image';
 
 import style from './blogPost.module.css';
 
@@ -9,7 +10,11 @@ export default ( { title, data } ) => {
     return <Layout>
         <div className = { style.content }>
           <h1 className={style.title}>{post.frontmatter.title}<span className = { style.date }>{post.frontmatter.date}</span></h1>
-          <img className = { style.image } src={post.frontmatter.image} alt={post.frontmatter.imageAlt || post.frontmatter.title}></img>
+          <Image
+            className = { style.image }
+            fluid={post.frontmatter.image.childImageSharp.fluid}
+            alt={post.frontmatter.imageAlt || post.frontmatter.title}
+          />
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: post.html }}
@@ -26,7 +31,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         pagePath
         title
-        image
+        image {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
