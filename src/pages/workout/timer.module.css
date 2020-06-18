@@ -1,0 +1,14 @@
+.timer_bg {
+	stroke: #ffa3a3 !important;
+}
+
+.timer {
+	fill: none;
+	stroke: #aa4444;
+	stroke-width: 5px;
+	stroke-dasharray: 1000;
+}
+
+.timer_text {
+	text-anchor: middle;
+}
