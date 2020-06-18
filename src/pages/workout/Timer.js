@@ -3,9 +3,8 @@ import styles from './timer.module.css';
 import beepWav from './beep.wav';
 import completeWav from './success.wav';
 
-const beepSound = new Audio( beepWav );
-const completeSound = new Audio( completeWav );
-
+let beepSound = null;
+let completeSound = null;
 
 const Timer = ({ seconds, onTimerComplete }) => {
     const [timer, setTimer] = useState(seconds);
@@ -17,9 +16,10 @@ const Timer = ({ seconds, onTimerComplete }) => {
 
     // const [ beepSound, setBeepSound ] = useState( null );
 
-    // useEffect( () => {
-    //     setBeepSound(new Audio(beepWav) );
-    // }, [] );
+    useEffect( () => {
+        if (!beepSound) beepSound = new Audio( beepWav );
+        if (!completeSound) completeSound = new Audio(completeWav );
+    }, [] );
 
     const reset = ( time ) => {
         setTimer( time );
