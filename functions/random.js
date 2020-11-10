@@ -8,7 +8,7 @@ exports.handler = function (event, context, callback) {
         statusCode: 200,
         body: {
             test: "Hello Functions!",
-            random: Math.random();
+            random: Math.random()
         }
     });
 };
