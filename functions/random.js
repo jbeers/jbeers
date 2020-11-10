@@ -6,9 +6,9 @@ exports.handler = function (event, context, callback) {
             "Content-Type": 'application/json'
         },
         statusCode: 200,
-        body: {
+        body: JSON.stringify({
             test: "Hello Functions!",
             random: Math.random()
-        }
+        })
     });
 };
