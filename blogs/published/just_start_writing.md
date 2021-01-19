@@ -2,7 +2,7 @@
 pagePath: "/just-start-writing"
 date: "2020-08-13"
 title: "Just Start Writing"
-image: ../src/images/bird.png
+image: ../../src/images/bird.png
 ---
 
 <style>

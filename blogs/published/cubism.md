@@ -2,7 +2,7 @@
 pagePath: "/cubism"
 date: "2020-11-08"
 title: "GIMP Cubism Filter"
-image: ../src/images/pa_cube.png
+image: ../../src/images/pa_cube.png
 ---
 
 Coming up with small doodles for to accompany my blog posts has gotten kind of tedious. I like having images but the process of creating an image to go along with a blog post has kept me from achieving my goal for this site. It isn't that the small doodles are hard to draw there are just many steps involved. Sketch, cleanup, transfer to computer, digitize, put on site.

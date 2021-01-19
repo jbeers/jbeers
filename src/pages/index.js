@@ -31,18 +31,23 @@ export default ( { data } ) => {
 
 export const pageQuery = graphql`
   query {
-  allMarkdownRemark(limit:5, sort: {order: DESC, fields: [frontmatter___date]}) {
-    edges {
-      node {
-        html
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          pagePath
-          title
-          image {
-            childImageSharp {
-              fluid(maxWidth: 300) {
-                ...GatsbyImageSharpFluid
+    allMarkdownRemark(
+      filter: {fileAbsolutePath: { regex: "/published/" } }
+      limit:5
+      sort: {order: DESC, fields: [frontmatter___date]}
+    ){
+      edges {
+        node {
+          html
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            pagePath
+            title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 300) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }
@@ -50,6 +55,5 @@ export const pageQuery = graphql`
       }
     }
   }
-}
 
 `
