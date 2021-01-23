@@ -1,0 +1,29 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    padding-top: 40px;
+}
+
+.listWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bookList {
+    list-style: none;
+}
+
+.bookListCateogry {
+    text-align: center;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .content {
+        max-width: 900px;
+        margin: auto;
+    }
+}
