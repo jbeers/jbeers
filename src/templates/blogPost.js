@@ -9,7 +9,10 @@ export default ( { title, data } ) => {
     const { markdownRemark: post } = data
     return <Layout>
         <div className = { style.content }>
-          <h1 className={style.title}>{post.frontmatter.title}<span className = { style.date }>{post.frontmatter.date}</span></h1>
+          <h1 className={style.title}>
+            {post.frontmatter.title}
+            <span className = { style.date }>{post.frontmatter.date}</span>
+          </h1>
           <Image
             className = { style.image }
             fluid={post.frontmatter.image.childImageSharp.fluid}
