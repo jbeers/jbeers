@@ -38,8 +38,8 @@ $fruits[0]  # apple
     Job = "Delivery Boy";
 }
 
-# techincally the [PSCustomObject] bit is unecessary but it only seems to have disadvantages
-# as far as I can tell you should always use the [PSCustomObject] type
+# You dont have to use [PSCustomObject] to create some sort of map
+# but powershell seems to handle it much better this way
 `}
                     </Tip>
                     <Tip title="Navigation">
@@ -53,8 +53,7 @@ cd c:/my-project
 pushd scripts
 # now we are in c:/my-project/scripts
 
-# run a script
-# do stuff with the output
+# do whatever you need to: run a script, execute more commands, etc...
 
 popd
 # now we are back in c:/my-project
