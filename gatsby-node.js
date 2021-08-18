@@ -1,29 +1,22 @@
 const path = require( 'path' );
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
-// You can delete this file if you're not using it
 
 
 exports.createPages = async ( { graphql, actions, reporter } ) => {
-    const { createPage } = actions;
-    const blogTemplate = path.resolve( 'src/templates/blogPost.js' ); 
+    const { createPage } = actions; 
+    const prismicBlogPost = require.resolve( './src/templates/prismicBlogPost.js' ); 
 
     const result = await graphql(`
     {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "/published/" } }
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            fileAbsolutePath
-            frontmatter {
-              pagePath
+      allPrismicPost{
+        nodes {
+          id
+          data {
+            title {
+              text
+            }
+            publish_date
+            main_image {
+              url
             }
           }
         }
@@ -35,12 +28,14 @@ exports.createPages = async ( { graphql, actions, reporter } ) => {
         return
     }
 
-    result.data.allMarkdownRemark.edges
-      .forEach(({ node }) => {
-          createPage({
-              path: node.frontmatter.pagePath,
-              component: blogTemplate,
-              context: {} // additional data can be passed via context
-          })
-      })
+    result.data.allPrismicPost.nodes
+    .forEach(( node ) => {
+        createPage({
+            path: '/' + node.data.title.text.replace( /\W/g, '_' ).toLowerCase(),
+            component: prismicBlogPost,
+            context: {
+              id: node.id
+            }
+        })
+    })
 }

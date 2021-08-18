@@ -5,6 +5,13 @@ module.exports = {
     author: `jacobtbeers@gmail.com`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+        customTypesApiToken:  process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
+      },
+    },
     `gatsby-plugin-react-helmet`,
                 {
                   resolve: `gatsby-source-filesystem`,

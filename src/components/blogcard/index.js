@@ -9,7 +9,6 @@ export default ( {
     pagePath,
     date
 }) => {
-    console.log( imageSrc );
     return <div className = { style.card }>
         <div className = { style.top }>
             <div className = { style.blog_info }>
@@ -19,7 +18,12 @@ export default ( {
                 <span>{date}</span>
             </div>
             <div className = { style.image_wrapper }>
-                <Image fluid={imageSrc.childImageSharp.fluid} alt = { title } />
+                {
+                    typeof imageSrc === 'string'
+                    ? <img src={imageSrc} alt = { title } />
+                    : <Image fluid={ imageSrc.childImageSharp.fluid} alt = { title } />
+                }
+                
             </div>
         </div>
         <div className = { style.bottom }>
